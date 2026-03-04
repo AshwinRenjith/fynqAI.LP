@@ -157,11 +157,25 @@
 
 @media (max-width: 768px) {
     .scene {
-        height: 280px;
+        height: 250px;
     }
 
     .face {
-        height: 70px;
-        top: 105px;
+        height: 60px;
+        top: 95px;
+    }
+
+    .backgroundText {
+        font-size: 5rem;
+    }
+
+    .deptRow {
+        gap: 0.5rem;
+        padding: 0 1rem;
+    }
+
+    .deptTag {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
     }
 }

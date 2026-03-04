@@ -188,6 +188,8 @@
     }
 }
 
+
+
 @media (max-width: 768px) {
     .uiMockupWrapper {
         width: 95%;
@@ -195,10 +197,21 @@
     }
 
     .uiBody {
-        padding: 1.5rem;
+        padding: 1.25rem 1rem;
+    }
+
+    .question {
+        max-width: 85%;
+        font-size: 0.9rem;
     }
 
     .answerBlock {
-        max-width: 90%;
+        max-width: 95%;
+        gap: 0.75rem;
+    }
+
+    .answer {
+        font-size: 0.9rem;
+        padding: 1rem;
     }
 }

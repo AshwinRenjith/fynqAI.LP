@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -138,7 +138,19 @@ const EcosystemOrbit = () => {
         { icon: <Briefcase size={32} />, angle: 300 },
     ];
 
-    const radius = 260; // Increased radius to ensure clear distance from the glowing core
+    const [radius, setRadius] = useState(260);
+    const [iconOffset, setIconOffset] = useState(-40);
+
+    useEffect(() => {
+        const handleResize = () => {
+            const isMobile = window.innerWidth <= 768;
+            setRadius(isMobile ? 150 : 260); // 300px ring diameter on mobile
+            setIconOffset(isMobile ? -20 : -40); // 40px icons on mobile
+        };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     return (
         <section ref={sectionRef} className={styles.section} id="integrations">
@@ -191,8 +203,8 @@ const EcosystemOrbit = () => {
                                 style={{
                                     left: `calc(50% + ${x}px)`,
                                     top: `calc(50% + ${y}px)`,
-                                    marginLeft: '-40px',
-                                    marginTop: '-40px'
+                                    marginLeft: `${iconOffset}px`,
+                                    marginTop: `${iconOffset}px`
                                 }}
                             >
                                 {tool.icon}

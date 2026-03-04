@@ -242,14 +242,26 @@
 
 @media (max-width: 768px) {
     .chatContainer {
-        height: 600px;
+        height: 60vh;
+        width: 95vw;
+    }
+
+    .chatBody {
+        padding: 1.25rem 1rem;
+        gap: 1.5rem;
     }
 
     .userBubble {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        padding: 0.8rem 1rem;
+        max-width: 90%;
     }
 
     .aiResponseText {
-        font-size: 1rem;
+        font-size: 0.95rem;
+    }
+
+    .citationRow {
+        flex-wrap: wrap;
     }
 }

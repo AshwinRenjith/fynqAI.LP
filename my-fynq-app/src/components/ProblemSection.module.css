@@ -276,3 +276,27 @@
         width: 260px;
     }
 }
+
+@media (max-width: 768px) {
+    .heading {
+        font-size: 2rem;
+    }
+
+    .leftCol {
+        height: 60vh;
+    }
+
+    .conflictDoc {
+        width: 90%;
+        left: 5% !important;
+        right: auto !important;
+    }
+
+    .conflictDoc.docA {
+        top: 20%;
+    }
+
+    .conflictDoc.docB {
+        top: 60%;
+    }
+}

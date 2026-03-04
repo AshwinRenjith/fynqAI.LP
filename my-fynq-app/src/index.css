@@ -112,6 +112,21 @@ button {
   border-color: rgba(255, 255, 255, 0.35);
 }
 
+@media (max-width: 768px) {
+  .site-nav {
+    padding: 1rem 1.5rem;
+  }
+
+  .nav-logo {
+    font-size: 1.25rem;
+  }
+
+  .nav-cta {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
 /* ========== UTILITIES ========== */
 .glass-panel {
   background: var(--glass-bg);

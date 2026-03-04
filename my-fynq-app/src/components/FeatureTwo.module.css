@@ -237,4 +237,36 @@
         height: 55vh;
         padding: 1.5rem;
     }
+
+    .cardTitle {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .cardDesc {
+        font-size: 0.95rem;
+    }
+
+    .docFile {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+        max-width: 200px;
+    }
+
+    .dashboardMock {
+        width: 95%;
+        padding: 1rem;
+    }
+
+    .dashboardHeader {
+        font-size: 0.85rem;
+    }
+
+    .alertRow {
+        padding: 0.75rem;
+    }
+
+    .alertText span {
+        font-size: 0.75rem;
+    }
 }
