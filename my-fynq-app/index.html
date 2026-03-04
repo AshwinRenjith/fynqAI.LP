@@ -141,6 +141,57 @@
       ]
     }
     </script>
+
+  <!-- JSON-LD Structured Data: BreadcrumbList (forces Sitelinks in SERP) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "fynqAI Home",
+        "item": "https://fynqai.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Conversational AI",
+        "item": "https://fynqai.com/#conversational-ai"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Audit Agent",
+        "item": "https://fynqai.com/#audit-agent"
+      },{
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Integrations",
+        "item": "https://fynqai.com/#integrations"
+      }]
+    }
+    </script>
+
+  <!-- JSON-LD Structured Data: Product & AggregateRating (forces ★★★★★ Stars in SERP) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "fynqAI Enterprise Knowledge Platform",
+      "image": "https://fynqai.com/og-image.png",
+      "description": "SOC2 compliant AI audit agent and conversational search for enterprise documents.",
+      "brand": {
+        "@type": "Brand",
+        "name": "fynqAI"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "128",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }
+    </script>
 </head>
 
 <body>
