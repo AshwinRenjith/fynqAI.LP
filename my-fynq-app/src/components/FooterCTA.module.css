@@ -1,7 +1,8 @@
 .section {
     position: relative;
     width: 100vw;
-    height: 180vh;
+    height: 250vh;
+    margin-top: -100vh;
     background: transparent;
     z-index: 20;
 }

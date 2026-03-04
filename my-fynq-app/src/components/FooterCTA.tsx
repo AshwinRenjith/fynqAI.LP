@@ -17,13 +17,17 @@ const FooterCTA = () => {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: sectionRef.current,
-                    start: 'top 60%',
+                    start: 'top top',
                     end: 'bottom bottom',
                     scrub: 1,
                 },
             });
 
-            // Phase 1: Expand the clip-path from pill to full screen
+            // Phase 0: Add a small buffer so ValueProp can be read while the button just hangs there
+            tl.add('start');
+            tl.to({}, { duration: 0.2 }, 'start');
+
+            // Phase 1: Expand the clip-path from pill to full screen, slightly delayed
             tl.fromTo(
                 revealRef.current,
                 {
@@ -42,8 +46,9 @@ const FooterCTA = () => {
                 {
                     clipPath: 'inset(0% 0% 0% 0% round 0px)',
                     ease: 'power3.inOut',
-                    duration: 1.5,
-                }
+                    duration: 1.2,
+                },
+                'start+=0.2'
             );
 
             // Phase 1b: Fade out the pill label
@@ -54,7 +59,7 @@ const FooterCTA = () => {
                     scale: 1.2,
                     duration: 0.3,
                 },
-                0
+                'start+=0.2'
             );
 
             // Phase 2: Fade in the content
@@ -66,7 +71,7 @@ const FooterCTA = () => {
                     ease: 'power3.out',
                     duration: 0.5,
                 },
-                0.6
+                'start+=0.6'
             );
         }, sectionRef);
 
