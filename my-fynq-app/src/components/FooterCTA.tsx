@@ -17,52 +17,43 @@ const FooterCTA = () => {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: sectionRef.current,
-                    start: 'top top',
-                    end: 'bottom bottom',
+                    start: 'top 85%',
+                    end: 'top 10%',
                     scrub: 1,
                 },
             });
 
-            // Phase 0: Add a small buffer so ValueProp can be read while the button just hangs there
-            tl.add('start');
-            tl.to({}, { duration: 0.2 }, 'start');
-
-            // Phase 1: Expand the clip-path from pill to full screen, slightly delayed
+            // Phase 1: Expand clip-path from pill button near top, outward to full screen
             tl.fromTo(
                 revealRef.current,
                 {
                     clipPath: () => {
-                        const h = window.innerHeight;
                         const w = window.innerWidth;
-                        const bw = w < 768 ? 160 : 200; // Button width
-                        const bh = 56; // Button height
-                        const bm = 40; // Bottom margin
-
-                        const topInset = h - bm - bh;
-                        const lrInset = (w - bw) / 2;
-                        return `inset(${topInset}px ${lrInset}px ${bm}px ${lrInset}px round 30px)`;
+                        const bw = w < 768 ? 180 : 220;
+                        const lrInset = ((w - bw) / 2);
+                        // Pill at ~15% from top: top inset 12%, bottom inset 84%
+                        return `inset(12% ${lrInset}px 84% ${lrInset}px round 30px)`;
                     },
                 },
                 {
                     clipPath: 'inset(0% 0% 0% 0% round 0px)',
-                    ease: 'power3.inOut',
-                    duration: 1.2,
-                },
-                'start+=0.2'
+                    ease: 'power2.inOut',
+                    duration: 1,
+                }
             );
 
-            // Phase 1b: Fade out the pill label
+            // Phase 1b: Fade out the pill label quickly
             tl.to(
                 pillLabelRef.current,
                 {
                     opacity: 0,
-                    scale: 1.2,
-                    duration: 0.3,
+                    scale: 1.3,
+                    duration: 0.2,
                 },
-                'start+=0.2'
+                0.05
             );
 
-            // Phase 2: Fade in the content
+            // Phase 2: Fade in the content EARLY so it's visible during mid-expansion
             tl.to(
                 contentRef.current,
                 {
@@ -71,7 +62,7 @@ const FooterCTA = () => {
                     ease: 'power3.out',
                     duration: 0.5,
                 },
-                'start+=0.6'
+                0.3
             );
         }, sectionRef);
 

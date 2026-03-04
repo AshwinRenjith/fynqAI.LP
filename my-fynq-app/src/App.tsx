@@ -1,4 +1,4 @@
-import { useEffect, lazy, Suspense } from 'react';
+import { useEffect } from 'react';
 import Lenis from 'lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -8,10 +8,9 @@ import ProblemSection from './components/ProblemSection';
 import FeatureOne from './components/FeatureOne';
 import FeatureTwo from './components/FeatureTwo';
 
-// Lazy-load heavy 3D components for better LCP
-const InterfaceReveal = lazy(() => import('./components/InterfaceReveal'));
-const EcosystemOrbit = lazy(() => import('./components/EcosystemOrbit'));
-const ValueProp = lazy(() => import('./components/ValueProp'));
+import InterfaceReveal from './components/InterfaceReveal';
+import EcosystemOrbit from './components/EcosystemOrbit';
+import ValueProp from './components/ValueProp';
 
 import FooterCTA from './components/FooterCTA';
 import './index.css';
@@ -98,11 +97,9 @@ function App() {
             <ProblemSection />
             <FeatureOne />
             <FeatureTwo />
-            <Suspense fallback={null}>
-              <InterfaceReveal />
-              <EcosystemOrbit />
-              <ValueProp />
-            </Suspense>
+            <InterfaceReveal />
+            <EcosystemOrbit />
+            <ValueProp />
             <FooterCTA />
           </div>
         </main>

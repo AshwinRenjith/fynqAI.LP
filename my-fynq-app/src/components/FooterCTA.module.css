@@ -1,8 +1,7 @@
 .section {
     position: relative;
     width: 100vw;
-    height: 250vh;
-    margin-top: -100vh;
+    height: 100vh;
     background: transparent;
     z-index: 20;
 }
@@ -25,10 +24,10 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--color-obsidian);
-    /* Start as a small pill in the center */
-    clip-path: inset(42% 30% 42% 30% round 100px);
-    transition: clip-path 0.1s ease;
+    background: linear-gradient(170deg, #141418 0%, #0e0e12 40%, #12080a 100%);
+    border: 1px solid rgba(196, 44, 62, 0.2);
+    box-shadow: 0 0 60px 10px rgba(196, 44, 62, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .revealGlow {
@@ -43,20 +42,26 @@
     pointer-events: none;
 }
 
-/* Pill label that shows before expansion */
+/* Pill label — positioned near top of sticky wrapper, right below where ValueProp's red line ends */
 .pillLabel {
     position: absolute;
-    bottom: 68px;
-    /* Centered in the 56px button height standing 40px from bottom */
+    top: 15%;
     left: 50%;
-    transform: translate(-50%, 50%);
-    z-index: 5;
+    transform: translate(-50%, -50%);
+    z-index: 25;
     font-size: 0.9rem;
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.7);
     pointer-events: none;
+    background: rgba(196, 44, 62, 0.15);
+    border: 1px solid rgba(196, 44, 62, 0.35);
+    padding: 0.75rem 2rem;
+    border-radius: 30px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    white-space: nowrap;
 }
 
 /* Main footer content */

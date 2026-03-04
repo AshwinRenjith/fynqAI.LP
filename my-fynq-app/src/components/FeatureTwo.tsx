@@ -18,19 +18,26 @@ const FeatureTwo = () => {
 
             const totalScroll = track.scrollWidth - window.innerWidth;
 
-            // Horizontal scroll animation
-            gsap.to(track, {
-                x: () => -totalScroll,
-                ease: 'none',
+            // Horizontal scroll animation with timeline for a resting pause at the end
+            const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: sectionRef.current,
                     pin: containerRef.current,
                     start: 'top top',
-                    end: () => `+=${totalScroll * 1.5}`,
+                    end: () => `+=${totalScroll + window.innerHeight * 1.5}`, // Much longer pin for comfortable reading
                     scrub: 1,
                     invalidateOnRefresh: true,
                 },
             });
+
+            tl.to(track, {
+                x: () => -totalScroll,
+                ease: 'none',
+                duration: 1,
+            });
+
+            // Add empty space to the timeline so it stays pinned and still AFTER horizontal scroll is done
+            tl.to({}, { duration: 0.4 });
 
             // Animate the scan line and audit node
             const node = document.querySelector(`.${styles.auditNode}`);
