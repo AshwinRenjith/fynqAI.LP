@@ -1,0 +1,240 @@
+.section {
+    position: relative;
+    width: 100vw;
+    height: 300vh;
+    background: var(--color-bg);
+    overflow: hidden;
+}
+
+.horizontalScrollContainer {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.headingWrapper {
+    padding: 8vh 5vw 0;
+    flex-shrink: 0;
+    z-index: 10;
+}
+
+.heading {
+    font-size: clamp(2.5rem, 4.5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--color-white);
+}
+
+.headingSub {
+    color: var(--color-text-muted);
+}
+
+.cardsTrack {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 5vw;
+    padding: 0 5vw;
+    width: fit-content;
+}
+
+.card {
+    width: 75vw;
+    max-width: 850px;
+    height: 65vh;
+    max-height: 550px;
+    background: var(--color-surface);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.cardStep {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-ember);
+    margin-bottom: 0.5rem;
+}
+
+.cardTitle {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 0.75rem;
+}
+
+.cardDesc {
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 460px;
+}
+
+.visualArea {
+    flex: 1;
+    position: relative;
+    margin-top: 1.5rem;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.015);
+    border: 1px solid var(--glass-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Document file elements */
+.docFile {
+    padding: 0.9rem 1.8rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    font-family: 'Inter', monospace;
+    font-size: 0.9rem;
+    position: absolute;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 280px;
+}
+
+.docA {
+    left: 12%;
+    top: 30%;
+}
+
+.docB {
+    right: 12%;
+    bottom: 30%;
+}
+
+/* Scan line */
+.scanLine {
+    position: absolute;
+    width: 2px;
+    height: 140%;
+    background: linear-gradient(180deg, transparent 0%, #ff5f56 50%, transparent 100%);
+    box-shadow: 0 0 15px 3px rgba(255, 95, 86, 0.4);
+    left: 50%;
+    top: -20%;
+    transform-origin: center;
+}
+
+/* Audit node */
+.auditNode {
+    width: 36px;
+    height: 36px;
+    background: #ff5f56;
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 0 0 25px 8px rgba(255, 95, 86, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Connection line between documents */
+.connectionLine {
+    position: absolute;
+    width: 60%;
+    height: 2px;
+    left: 20%;
+    top: 50%;
+    background: linear-gradient(90deg, transparent, #ff5f56 30%, #ff5f56 70%, transparent);
+    opacity: 0.6;
+    box-shadow: 0 0 12px rgba(255, 95, 86, 0.3);
+}
+
+/* Dashboard mock */
+.dashboardMock {
+    width: 85%;
+    height: 85%;
+    background: var(--color-bg);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 95, 86, 0.3);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.dashboardHeader {
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.alertRow {
+    background: rgba(255, 95, 86, 0.06);
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    color: #ff8a98;
+    border: 1px solid rgba(255, 95, 86, 0.12);
+}
+
+.alertText strong {
+    display: block;
+    margin-bottom: 0.25rem;
+    color: #ff8a98;
+}
+
+.alertText span {
+    font-size: 0.85rem;
+    opacity: 0.75;
+    line-height: 1.4;
+}
+
+/* Progress indicator */
+.progress {
+    position: absolute;
+    bottom: 3vh;
+    left: 5vw;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 20;
+}
+
+.progressBar {
+    width: 120px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progressFill {
+    height: 100%;
+    background: var(--color-white);
+    width: 33%;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.progressText {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 85vw;
+        height: 55vh;
+        padding: 1.5rem;
+    }
+}

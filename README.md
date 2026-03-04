@@ -414,8 +414,8 @@ fynqAI.LP/
 
 **Contact**
 
-📧 [hello@fynq.ai](mailto:hello@fynq.ai)
-🌐 [fynq.ai](https://fynq.ai)
+📧 [hello@fynqai.com](mailto:hello@fynqai.com)
+🌐 [fynqai.com](https://fynqai.com)
 🐦 [@fynqAI](https://twitter.com/fynqAI)
 
 </td>

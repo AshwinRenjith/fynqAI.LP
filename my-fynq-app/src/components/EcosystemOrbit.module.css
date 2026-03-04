@@ -1,0 +1,152 @@
+.section {
+    position: relative;
+    background-color: var(--color-bg);
+    overflow: hidden;
+}
+
+.stickyContainer {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    perspective: 2000px;
+}
+
+/* 3D Canvas container */
+.canvasWrapper {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    /* Below the orbits */
+    opacity: 0;
+    /* Fade in during scroll */
+}
+
+/* The central glowing core HUD */
+.coreHUD {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    opacity: 0;
+}
+
+.coreTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-ember);
+    text-shadow: 0 0 20px rgba(var(--color-ember-rgb, 255, 87, 34), 0.5);
+}
+
+.coreStatus {
+    font-size: 0.75rem;
+    color: var(--color-white-a60);
+    letter-spacing: 0.1em;
+}
+
+.integrationRing {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 520px;
+    height: 520px;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 5;
+    opacity: 0;
+}
+
+.orbitContainer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 15;
+    /* We don't translate here, we'll let GSAP handle the origin/rotation */
+}
+
+.toolLogo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    background: rgba(20, 20, 25, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    /* GSAP will animate translate/rotate */
+}
+
+/* The Security Grid overlay */
+.securityGrid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(var(--color-ember-rgb, 255, 87, 34), 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(var(--color-ember-rgb, 255, 87, 34), 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: center center;
+    z-index: 20;
+    pointer-events: none;
+    opacity: 0;
+    /* Fades in at the end */
+    mask-image: radial-gradient(circle at center, transparent 20%, black 80%);
+    -webkit-mask-image: radial-gradient(circle at center, transparent 20%, black 80%);
+}
+
+.securityLabel {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--color-white);
+    z-index: 25;
+    opacity: 0;
+    text-align: center;
+}
+
+.securitySubLabel {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--color-ember);
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .integrationRing {
+        width: 300px;
+        height: 300px;
+    }
+
+    .toolLogo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .securityLabel {
+        font-size: 1rem;
+    }
+}

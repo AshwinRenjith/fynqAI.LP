@@ -1,0 +1,16 @@
+{
+  "name": "fynqAI — Enterprise Knowledge Intelligence",
+  "short_name": "fynqAI",
+  "description": "The intelligence layer for your company's knowledge. AI audit agent for enterprise document compliance.",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#08080F",
+  "background_color": "#08080F",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
