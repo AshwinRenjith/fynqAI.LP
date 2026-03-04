@@ -21,13 +21,14 @@ gsap.registerPlugin(ScrollTrigger);
 function App() {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      duration: 2.5, // Increased duration for extreme buttery feel
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // standard ease-out curve, but lengthened by duration
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 1,
-      touchMultiplier: 2,
+      wheelMultiplier: 0.8, // Slightly softer wheel to allow the duration to float
+      touchMultiplier: 1.5,
+      infinite: false,
     });
 
     lenis.on('scroll', ScrollTrigger.update);
