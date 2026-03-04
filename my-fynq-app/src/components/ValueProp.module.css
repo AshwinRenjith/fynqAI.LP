@@ -1,5 +1,6 @@
 .section {
-    position: relative;
+    position: sticky;
+    top: 0;
     width: 100vw;
     height: 100vh;
     background: var(--color-bg);
@@ -9,6 +10,7 @@
     align-items: center;
     justify-content: center;
     gap: 0;
+    z-index: 10;
 }
 
 .canvasContainer {

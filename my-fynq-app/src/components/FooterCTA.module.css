@@ -1,8 +1,9 @@
 .section {
     position: relative;
     width: 100vw;
-    height: 120vh;
-    background: var(--color-bg);
+    height: 180vh;
+    background: transparent;
+    z-index: 20;
 }
 
 .stickyWrapper {
@@ -44,6 +45,10 @@
 /* Pill label that shows before expansion */
 .pillLabel {
     position: absolute;
+    bottom: 68px;
+    /* Centered in the 56px button height standing 40px from bottom */
+    left: 50%;
+    transform: translate(-50%, 50%);
     z-index: 5;
     font-size: 0.9rem;
     font-weight: 600;

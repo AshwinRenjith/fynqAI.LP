@@ -27,12 +27,22 @@ const FooterCTA = () => {
             tl.fromTo(
                 revealRef.current,
                 {
-                    clipPath: 'inset(42% 30% 42% 30% round 100px)',
+                    clipPath: () => {
+                        const h = window.innerHeight;
+                        const w = window.innerWidth;
+                        const bw = w < 768 ? 160 : 200; // Button width
+                        const bh = 56; // Button height
+                        const bm = 40; // Bottom margin
+
+                        const topInset = h - bm - bh;
+                        const lrInset = (w - bw) / 2;
+                        return `inset(${topInset}px ${lrInset}px ${bm}px ${lrInset}px round 30px)`;
+                    },
                 },
                 {
                     clipPath: 'inset(0% 0% 0% 0% round 0px)',
-                    ease: 'power2.inOut',
-                    duration: 1,
+                    ease: 'power3.inOut',
+                    duration: 1.5,
                 }
             );
 
